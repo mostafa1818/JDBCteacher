@@ -86,6 +86,38 @@ public class TeacherService {
 
         return null;
     }
+public void printing()
+
+{
+
+    try(
+            Connection connection=ConnectionFactory.getconnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from Teacher");
+            ResultSet resultSet=preparedStatement.executeQuery()
+    )
+    {
+        List<Teacher> list = new ArrayList<>();
+        while(resultSet.next())
+        {
+            Teacher teacher=new Teacher();
+            teacher.setId(resultSet.getInt("idteacher"));
+            teacher.setFirstName(resultSet.getString("FirstName"));
+            teacher.setLastName(resultSet.getString("LastName"));
+
+            list.add(teacher);
+            System.out.println(teacher);
+        }
+
+
+
+    }catch (SQLException sqlException){sqlException.printStackTrace();}
+
+
+
+
+
+
+}
 
 
 

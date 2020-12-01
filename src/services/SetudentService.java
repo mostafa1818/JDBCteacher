@@ -95,6 +95,35 @@ public class SetudentService {
     }
 
 
+    public void printing()
 
+    {
+        try(
+                Connection connection=ConnectionFactory.getconnection();
+                PreparedStatement preparedStatement=connection.prepareStatement("select  * from Student");
+                ResultSet resultSet=preparedStatement.executeQuery();
+
+        ){
+            List<Student> list=new ArrayList<>();
+            while(resultSet.next())
+            {
+                Student student=new Student();
+                student.setId(resultSet.getInt("idstudent"));
+                student.setFirstName(resultSet.getString("FirstName"));
+                student.setLastName(resultSet.getString("LastName"));
+                list.add(student);
+                System.out.println(student);
+            }
+
+
+
+        }
+        catch (SQLException sqlException){sqlException.printStackTrace();}
+
+
+
+
+
+    }
 
 }

@@ -108,4 +108,37 @@ public List<Course> loadall()
 }
 
 
+
+    public void printing()
+
+    {
+        /**********bigprobkem***********/
+        try(
+                Connection connection=ConnectionFactory.getconnection();
+                PreparedStatement preparedStatement=connection.prepareStatement("select * from Course");
+                ResultSet resultSet=preparedStatement.executeQuery();
+
+        )
+        {
+
+            List<Course> list=new ArrayList<>();
+            while(resultSet.next())
+            {
+                Course course=new Course();
+                course.setTeacherId(resultSet.getInt("idteacher"));
+                course.setStudentId(resultSet.getInt("idstudent"));
+                list.add(course);
+                System.out.println(course);
+            }
+
+
+
+        }
+        catch (SQLException sqlException){sqlException.printStackTrace();}
+
+
+
+    }
+
+
 }
