@@ -115,7 +115,10 @@ public List<Course> loadall()
         /**********bigprobkem***********/
         try(
                 Connection connection=ConnectionFactory.getconnection();
-                PreparedStatement preparedStatement=connection.prepareStatement("select * from Course");
+                PreparedStatement preparedStatement=connection.
+                        prepareStatement("select * from Course c join Teacher t join student s " +
+                                             "on c.idteacher=tidteacher and s.idstudent=c.s.idstudent" +
+                                             " group by s.student");
                 ResultSet resultSet=preparedStatement.executeQuery();
 
         )
