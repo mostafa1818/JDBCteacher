@@ -29,22 +29,35 @@ public class Main  {
 
          while(true)
          {
-             if(input.equals("addteacher")){break;}
-             if(input.equals("deleteteacher")){break;}
-             if(input.equals("showteacher")){break;}
-             if(input.equals("editeteacher")){break;}
+             if(input.equals("addteacher"))
+             {break;}
+             if(input.equals("deleteteacher"))
+             {break;}
+             if(input.equals("showteacher"))
+             {break;}
+             if(input.equals("editeteacher"))
+             {break;}
 
-             if(input.equals("addstudent")){break;}
-             if(input.equals("deletestudent")){break;}
-             if(input.equals("showstudent")){break;}
-             if(input.equals("editestudent")){break;}
+             if(input.equals("addstudent"))
+             {break;}
+             if(input.equals("deletestudent"))
+             {break;}
+             if(input.equals("showstudent"))
+             {break;}
+             if(input.equals("editestudent"))
+             {break;}
 
-             if(input.equals("addcourse")){break;}
-             if(input.equals("deletecourse")){break;}
-             if(input.equals("showscourse")){break;}
-             if(input.equals("editecourse")){break;}
+             if(input.equals("addcourse"))
+             {break;}
+             if(input.equals("deletecourse"))
+             {break;}
+             if(input.equals("showscourse"))
+             {break;}
+             if(input.equals("editecourse"))
+             {break;}
 
-             if(true){break;}
+             if(true)
+             {break;}
 
 
 
