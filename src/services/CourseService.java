@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CourseService {
 
-    public void save(Course course)
+    public void adding(Course course)
     {
         try(
                 Connection connection=ConnectionFactory.getconnection();
@@ -116,9 +116,8 @@ public List<Course> loadall()
         try(
                 Connection connection=ConnectionFactory.getconnection();
                 PreparedStatement preparedStatement=connection.
-                        prepareStatement("select * from Course c join Teacher t join student s " +
-                                             "on c.idteacher=tidteacher and s.idstudent=c.s.idstudent" +
-                                             " group by s.student");
+                        prepareStatement(" select s.idstudent,s.firstname,s.lastname from Course c join Teacher t join student s on c.idteacher=t.idteacher\n" +
+                                " and s.idstudent=c.idstudent   where t.idteacher=3;");
                 ResultSet resultSet=preparedStatement.executeQuery();
 
         )

@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import objects.Teacher;
+import services.CourseService;
+import services.StudentService;
 import services.TeacherService;
 
 import java.util.List;
@@ -15,26 +17,32 @@ public class Main  {
 
     public static void main(String[] args) {
         TeacherService teacherService= new TeacherService();
+       StudentService studentService=new StudentService();
+        CourseService courseService=new CourseService();
 
-        List<Teacher> teachers = teacherService.loadall();
 //        teacherService.deleted( teachers,1) ;
 
         //    teacherService.edite(teachers,3,"massod","deli");
 
-         for (Teacher teacher : teachers)
-            System.out.println(teacher.toString());
+//         for (Teacher teacher : teachers)
+//            System.out.println(teacher.toString());
 
          Scanner scan =new Scanner(System.in);
          String input=scan.nextLine();
 
          while(true)
          {
+
+
              if(input.equals("addteacher"))
              {break;}
              if(input.equals("deleteteacher"))
              {break;}
              if(input.equals("showteacher"))
-             {break;}
+             {
+                  teacherService.printing();
+
+             }
              if(input.equals("editeteacher"))
              {break;}
 
@@ -43,7 +51,11 @@ public class Main  {
              if(input.equals("deletestudent"))
              {break;}
              if(input.equals("showstudent"))
-             {break;}
+             {
+                 studentService.printing();
+
+
+             }
              if(input.equals("editestudent"))
              {break;}
 
@@ -52,16 +64,15 @@ public class Main  {
              if(input.equals("deletecourse"))
              {break;}
              if(input.equals("showscourse"))
-             {break;}
+             {
+                 courseService.printing();
+             }
              if(input.equals("editecourse"))
              {break;}
 
-             if(true)
+             if(input.equals("exit"))
              {break;}
-
-
-
-
+               input=scan.nextLine();
 
          }
 

@@ -47,7 +47,7 @@ public class TeacherService {
     }
 
 
-    public void save(Teacher teacher)
+    public void adding(Teacher teacher)
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
