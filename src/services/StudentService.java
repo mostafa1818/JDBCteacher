@@ -13,7 +13,7 @@ import java.util.List;
 
 public class StudentService {
     /*add Student*/
-    public void adding(Student student)
+    public void Adding(Student student)
     {
         try(
                 Connection connection= ConnectionFactory.getconnection();
@@ -33,7 +33,7 @@ public class StudentService {
     }
 
     /*delete Student*/
-    public void deleted(  int id)
+    public void Deleted(  int id)
     {
 
         try(Connection connection= ConnectionFactory.getconnection();
@@ -45,7 +45,8 @@ public class StudentService {
         {
             preparedStatement.setInt(1,id);
 
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
@@ -53,7 +54,7 @@ public class StudentService {
 
     /*edite Student*/
 
-    public void edite( Student   student )
+    public void Edite( Student   student )
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
@@ -100,7 +101,7 @@ public class StudentService {
 
 
     /*print student*/
-    public void printing()
+    public void Printing()
 
     {
         try(

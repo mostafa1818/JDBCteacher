@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TeacherService {
     /*delete teacher*/
-    public void deleted(  int id)
+    public void Deleted(  int id)
     {
 
         try(Connection connection= ConnectionFactory.getconnection();
@@ -24,12 +24,13 @@ public class TeacherService {
         {
             preparedStatement.setInt(1,id);
 
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
     /*edite teacher*/
-    public void edite( Teacher  teacher )
+    public void Edite( Teacher  teacher )
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
@@ -48,7 +49,7 @@ public class TeacherService {
     }
 
     /*add teacher*/
-    public void adding(Teacher teacher)
+    public void Adding(Teacher teacher)
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
@@ -89,7 +90,7 @@ public class TeacherService {
         return null;
     }
     /*print teacher*/
-public void printing()
+public void Printing()
 
 {
 

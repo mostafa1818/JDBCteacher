@@ -14,7 +14,7 @@ import java.util.List;
 public class CourseService {
 
     /*add in course*/
-    public void adding(Course course)
+    public void Adding(Course course)
     {
         try(
                 Connection connection=ConnectionFactory.getconnection();
@@ -31,7 +31,7 @@ public class CourseService {
     }
 
     /*edite course*/
-    public void edite(  int idteacher,int idstudent, int newidteacher,int newidstudent)
+    public void Edite(  int idteacher,int idstudent, int newidteacher,int newidstudent)
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
@@ -56,16 +56,27 @@ public class CourseService {
 
 
 
+    public void TeacherDelete(  int idteacher )
+    {
+
+        try(Connection connection= ConnectionFactory.getconnection();
+            PreparedStatement preparedStatement=connection.
+                    prepareStatement("delete from course where idteacher= ? ");
+
+        )
+
+        {
+            preparedStatement.setInt(1,idteacher);
+
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
+        }catch (SQLException sqlException){sqlException.printStackTrace();}
+
+    }
 
 
 
-
-
-
-
-
-
-    public void deleted(  int idteacher,int idstudent)
+    public void  Deleted(  int idteacher,int idstudent)
     {
 
         try(Connection connection= ConnectionFactory.getconnection();
@@ -77,7 +88,29 @@ public class CourseService {
         {
             preparedStatement.setInt(1,idteacher);
             preparedStatement.setInt(2,idstudent);
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
+        }catch (SQLException sqlException){sqlException.printStackTrace();}
+
+    }
+
+
+
+
+    public void StudentDelete(   int idstudent)
+    {
+
+        try(Connection connection= ConnectionFactory.getconnection();
+            PreparedStatement preparedStatement=connection.
+                    prepareStatement("delete from course where  idstudent= ?");
+
+        )
+
+        {
+
+            preparedStatement.setInt(1,idstudent);
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
@@ -113,7 +146,7 @@ public List<Course> loadall()
 
 
 
-    public void printing(int input)
+    public void Printing(int input)
 
     {
         try(
@@ -154,7 +187,7 @@ public List<Course> loadall()
 
 
     }
-    public void printingall( )
+    public void PrintingAll( )
 
     {
         try(
