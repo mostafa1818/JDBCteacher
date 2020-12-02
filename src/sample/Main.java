@@ -129,6 +129,7 @@ public class Main  {
 
 
              }
+             System.out.println("press command");
              input=scan.nextLine();
 
          }
