@@ -127,7 +127,7 @@ public class StudentService {
             }
 
 
-
+            System.out.println("-------------------------------------");
         }
         catch (SQLException sqlException){sqlException.printStackTrace();}
 

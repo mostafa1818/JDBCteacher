@@ -178,8 +178,7 @@ public List<Course> loadall()
                 );
                 System.out.println( );
             }
-
-
+            System.out.println("-------------------------------------");
 
         }
         catch (SQLException sqlException){sqlException.printStackTrace();}

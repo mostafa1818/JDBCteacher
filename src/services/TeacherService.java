@@ -115,7 +115,7 @@ public void Printing()
         }
 
 
-
+        System.out.println("-------------------------------------");
     }catch (SQLException sqlException){sqlException.printStackTrace();}
 
 
