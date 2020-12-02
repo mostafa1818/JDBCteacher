@@ -89,6 +89,7 @@ public List<Course> loadall()
             )
     {
 
+
         List<Course> list=new ArrayList<>();
         while(resultSet.next())
         {
@@ -109,28 +110,38 @@ public List<Course> loadall()
 
 
 
-    public void printing()
+    public void printing(int input)
 
     {
-        /**********bigprobkem***********/
+
         try(
                 Connection connection=ConnectionFactory.getconnection();
                 PreparedStatement preparedStatement=connection.
                         prepareStatement(" select s.idstudent,s.firstname,s.lastname from Course c join Teacher t join student s on c.idteacher=t.idteacher\n" +
-                                " and s.idstudent=c.idstudent   where t.idteacher=3;");
-                ResultSet resultSet=preparedStatement.executeQuery();
+                                " and s.idstudent=c.idstudent  where t.idteacher=? ");
+
+
 
         )
         {
-
-            List<Course> list=new ArrayList<>();
+            ResultSet resultSet = null;
+            preparedStatement.setInt(1,input);
+            try 
+            {
+                resultSet=preparedStatement.executeQuery();
+            }
+            catch(SQLException sqlException){}
+            System.out.println("idteacher     FirstName     LastName");
+            System.out.println("-------------------------------------");
             while(resultSet.next())
             {
-                Course course=new Course();
-                course.setTeacherId(resultSet.getInt("idteacher"));
-                course.setStudentId(resultSet.getInt("idstudent"));
-                list.add(course);
-                System.out.println(course);
+
+                System.out.printf("%-15s%-15s%-15s",
+                        resultSet.getInt("idstudent"),
+                        resultSet.getString("FirstName"),
+                        resultSet.getString("LastName")
+                );
+
             }
 
 
