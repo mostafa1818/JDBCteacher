@@ -18,11 +18,11 @@ public class CourseService {
         try(
                 Connection connection=ConnectionFactory.getconnection();
                 PreparedStatement preparedStatement=connection
-                        .prepareStatement("INSERT into Course (idteacher,idstudentId) values (?,?)");
+                        .prepareStatement("INSERT into Course (idteacher,idstudent) values (?,?)");
                 )
         {
             preparedStatement.setInt(1,course.getTeacherId());
-            preparedStatement.setInt(2,course.getTeacherId());
+            preparedStatement.setInt(2,course.getStudentId());
             preparedStatement.executeUpdate();
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
@@ -34,7 +34,7 @@ public class CourseService {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
               prepareStatement
-                ("update  course set idteacher=?,idstudent=? where idteacher=? and where idstudent=?");
+                ("update  course set idteacher=?,idstudent=? where idteacher=? and  idstudent=?");
         )
         {
             preparedStatement.setInt(1,newidteacher);
@@ -73,7 +73,7 @@ public class CourseService {
 
         {
             preparedStatement.setInt(1,idteacher);
-            preparedStatement.setInt(1,idstudent);
+            preparedStatement.setInt(2,idstudent);
             preparedStatement.executeUpdate();
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
@@ -113,7 +113,6 @@ public List<Course> loadall()
     public void printing(int input)
 
     {
-
         try(
                 Connection connection=ConnectionFactory.getconnection();
                 PreparedStatement preparedStatement=connection.
@@ -131,12 +130,54 @@ public List<Course> loadall()
                 resultSet=preparedStatement.executeQuery();
             }
             catch(SQLException sqlException){}
-            System.out.println("idteacher     FirstName     LastName");
+            System.out.println("idstudent     FirstName     LastName");
             System.out.println("-------------------------------------");
             while(resultSet.next())
             {
 
                 System.out.printf("%-15s%-15s%-15s",
+                        resultSet.getInt("idstudent"),
+                        resultSet.getString("FirstName"),
+                        resultSet.getString("LastName")
+                );
+                System.out.println( );
+            }
+
+
+
+        }
+        catch (SQLException sqlException){sqlException.printStackTrace();}
+
+
+
+    }
+    public void printingall( )
+
+    {
+        try(
+                Connection connection=ConnectionFactory.getconnection();
+                PreparedStatement preparedStatement=connection.
+                        prepareStatement(" select t.idteacher,s.idstudent,s.firstname,s.lastname from Course c join Teacher t join student s on c.idteacher=t.idteacher\n" +
+                                " and s.idstudent=c.idstudent    ");
+
+
+
+        )
+        {
+            ResultSet resultSet = null;
+
+            try
+            {
+                resultSet=preparedStatement.executeQuery();
+            }
+            catch(SQLException sqlException){}
+            System.out.println("idteacher    idstudent     FirstName     LastName");
+            System.out.println("-------------------------------------------------");
+            while(resultSet.next())
+            {
+
+                System.out.printf("%-15s%-15s%-15s%-15s",
+                        resultSet.getInt("idteacher"),
                         resultSet.getInt("idstudent"),
                         resultSet.getString("FirstName"),
                         resultSet.getString("LastName")
