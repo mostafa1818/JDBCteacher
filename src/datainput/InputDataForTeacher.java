@@ -26,7 +26,7 @@ public class InputDataForTeacher {
     }
     /*input data for add*/
 
-    public Teacher datainput()
+    public Teacher DataInput()
     {
         Teacher teacher=new Teacher();
         Scanner scan =new Scanner(System.in);

@@ -29,7 +29,7 @@ public class InputDataForStudent {
 
 
     /*input data for add*/
-        public Student datainput()
+        public Student DataInput()
         {
             Student student=new Student();
             Scanner scan =new Scanner(System.in);

@@ -11,7 +11,7 @@ public class InputDataForCourse {
 
  /*input data*/
 
-        public Course datainput()
+        public Course DataInput()
         {
             Course course=new Course();
             Scanner scan =new Scanner(System.in);
