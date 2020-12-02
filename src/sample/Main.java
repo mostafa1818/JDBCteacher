@@ -39,11 +39,13 @@ public class Main  {
         int  intinput3;
         int  intinput4;
         /*menu*/
-        System.out.println("menu:\naddteacher     deleteteacher     showteacher     editeteacher" +
+        System.out.println("menu:");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("addteacher     deleteteacher     showteacher     editeteacher" +
                 "\naddstudent     deletestudent     showstudent     editestudent" +
                 "\naddcourse      deletecourse      showcourse      showallcourse   editecourse");
 
-
+        System.out.println("-----------------------------------------------------------------------------");
 
 
         System.out.println("press command");
