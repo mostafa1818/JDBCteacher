@@ -29,7 +29,7 @@ public class CourseService {
     }
 
 
-    public void edite(List<Course> course, int idteacher,int idstudent, int newidteacher,int newidstudent)
+    public void edite(  int idteacher,int idstudent, int newidteacher,int newidstudent)
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
@@ -62,7 +62,7 @@ public class CourseService {
 
 
 
-    public void deleted(List<Course> course, int idteacher,int idstudent)
+    public void deleted(  int idteacher,int idstudent)
     {
 
         try(Connection connection= ConnectionFactory.getconnection();
@@ -141,7 +141,7 @@ public List<Course> loadall()
                         resultSet.getString("FirstName"),
                         resultSet.getString("LastName")
                 );
-
+                System.out.println( );
             }
 
 
