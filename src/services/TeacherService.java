@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TeacherService {
 
-    public void deleted(List<Teacher> teacher, int id)
+    public void deleted(  int id)
     {
 
         try(Connection connection= ConnectionFactory.getconnection();
@@ -29,17 +29,17 @@ public class TeacherService {
 
     }
 
-    public void edite(List<Teacher> teacher, int id, String firstname, String LastName)
+    public void edite( Teacher  teacher )
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
           prepareStatement("update  teacher set idteacher=?,FirstName=?,LastName=? where idteacher=?");
         )
         {
-            preparedStatement.setInt(1,id);
-            preparedStatement.setString(2,firstname);
-            preparedStatement.setString(3,LastName);
-            preparedStatement.setInt(4,id);
+            preparedStatement.setInt(1,teacher.getId());
+            preparedStatement.setString(2,teacher.getFirstName());
+            preparedStatement.setString(3,teacher.getLastName());
+            preparedStatement.setInt(4,teacher.getId());
             preparedStatement.executeUpdate();
 
         }catch (SQLException sqlException){sqlException.printStackTrace();}
@@ -106,6 +106,7 @@ public void printing()
                     resultSet.getString("FirstName"),
                     resultSet.getString("LastName")
            );
+            System.out.println( );
 
         }
 
