@@ -1,5 +1,6 @@
 package objects;
 
+/*course class*/
 public class Course {
     private  int teacherId;
     private  int studentId;

@@ -1,5 +1,5 @@
 package objects;
-
+/*Student class*/
 public class Student {
 
   private  int id;
