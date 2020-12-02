@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class InputDataForStudent {
 
+    /*input data for edite*/
     public Student DataInputForEdite()
     {
         Student student=new Student();
@@ -27,7 +28,7 @@ public class InputDataForStudent {
     }
 
 
-
+    /*input data for add*/
         public Student datainput()
         {
             Student student=new Student();

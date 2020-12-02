@@ -5,7 +5,7 @@ import objects.Teacher;
 import java.util.Scanner;
 
 public class InputDataForTeacher {
-
+    /*input data for edite*/
     public Teacher DataInputForEdite()
     {
         Teacher teacher=new Teacher();
@@ -24,7 +24,7 @@ public class InputDataForTeacher {
         System.out.println("ok");
         return teacher;
     }
-
+    /*input data for add*/
 
     public Teacher datainput()
     {

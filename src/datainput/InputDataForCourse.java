@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class InputDataForCourse {
 
 
-
+ /*input data*/
 
         public Course datainput()
         {
