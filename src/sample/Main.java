@@ -20,6 +20,7 @@ import java.util.Scanner;
 public class Main  {
 
     public static void main(String[] args) {
+        /*create object*/
         TeacherService teacherService= new TeacherService();
         StudentService studentService=new StudentService();
         CourseService courseService=new CourseService();
@@ -28,12 +29,7 @@ public class Main  {
         InputDataForCourse inputDataForCourse=new InputDataForCourse();
 
 
-//        teacherService.deleted( teachers,1) ;
 
-        //    teacherService.edite(teachers,3,"massod","deli");
-
-//         for (Teacher teacher : teachers)
-//            System.out.println(teacher.toString());
 
         Scanner scan =new Scanner(System.in);
         Scanner intscan =new Scanner(System.in);
@@ -42,6 +38,7 @@ public class Main  {
         int  intinput2;
         int  intinput3;
         int  intinput4;
+        /*menu*/
         System.out.println("menu:\naddteacher     deleteteacher     showteacher     editeteacher" +
                 "\naddstudent     deletestudent     showstudent     editestudent" +
                 "\naddcourse      deletecourse      showcourse      showallcourse   editecourse");
@@ -50,8 +47,9 @@ public class Main  {
 
 
         System.out.println("press command");
+        /*scan command*/
         String input=scan.nextLine();
-
+        /*choise from menu*/
          while(true)
          {
 
