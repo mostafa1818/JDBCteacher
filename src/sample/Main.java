@@ -37,19 +37,20 @@ public class Main  {
 
         Scanner scan =new Scanner(System.in);
         Scanner intscan =new Scanner(System.in);
-        String input=scan.nextLine();
+
         int  intinput;
         int  intinput2;
         int  intinput3;
         int  intinput4;
-        System.out.println("menu:\naddteacher\ndeleteteacher\n showteacher\nediteteacher" +
-                "\naddstudent\ndeletestudent\nshowstudent\neditestudent" +
-                "\naddcourse\ndeletecourse\nshowcourse\neditecourse");
+        System.out.println("menu:\naddteacher     deleteteacher     showteacher     editeteacher" +
+                "\naddstudent     deletestudent     showstudent     editestudent" +
+                "\naddcourse      deletecourse      showcourse      showallcourse   editecourse");
 
 
 
 
         System.out.println("press command");
+        String input=scan.nextLine();
 
          while(true)
          {
@@ -103,6 +104,10 @@ public class Main  {
                      System.out.println("press id of teacher");
                      intinput=intscan.nextInt();
                      courseService.printing(intinput);
+                     break;
+                 case "showallcourse":
+
+                     courseService.printingall();
                      break;
                  case "editecourse":
                      System.out.println("press old id of teacher");
