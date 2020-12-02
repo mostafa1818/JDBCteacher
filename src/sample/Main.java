@@ -56,38 +56,40 @@ public class Main  {
              switch (input)
              {
                  case "addteacher":
-                     teacherService.adding(inputDataForTeacher.datainput());
+                     teacherService.Adding(inputDataForTeacher.DataInput());
                      break;
                  case "deleteteacher":
                      System.out.println("press id of teacher");
                      intinput=intscan.nextInt();
-                     teacherService.deleted(intinput);
+                     courseService.TeacherDelete(intinput);
+                     teacherService.Deleted(intinput);
                      break;
                  case "showteacher":
-                     teacherService.printing();
+                     teacherService.Printing();
                      break;
                  case "editeteacher":
-                     teacherService.edite(inputDataForTeacher.DataInputForEdite());
+                     teacherService.Edite(inputDataForTeacher.DataInputForEdite());
 
                      break;
                  case "addstudent":
-                     studentService.adding(inputDataForStudent.datainput());
+                     studentService.Adding(inputDataForStudent.DataInput());
 
                      break;
                  case "deletestudent":
                      System.out.println("press id of student");
                      intinput=intscan.nextInt();
-                     studentService.deleted(intinput);
+                     courseService.StudentDelete(intinput);
+                     studentService.Deleted(intinput);
 
                      break;
                  case "showstudent":
-                     studentService.printing();
+                     studentService.Printing();
                      break;
                  case "editestudent":
-                     studentService.edite(inputDataForStudent.DataInputForEdite());
+                     studentService.Edite(inputDataForStudent.DataInputForEdite());
                      break;
                  case "addcourse":
-                     courseService.adding(inputDataForCourse.datainput());
+                     courseService.Adding(inputDataForCourse.DataInput());
 
                      break;
                  case "deletecourse":
@@ -95,17 +97,17 @@ public class Main  {
                      intinput=intscan.nextInt();
                      System.out.println("press id of student");
                      intinput2=intscan.nextInt();
-                     courseService.deleted(intinput,intinput2);
+                     courseService.Deleted(intinput,intinput2);
 
                      break;
                  case "showcourse":
                      System.out.println("press id of teacher");
                      intinput=intscan.nextInt();
-                     courseService.printing(intinput);
+                     courseService.Printing(intinput);
                      break;
                  case "showallcourse":
 
-                     courseService.printingall();
+                     courseService.PrintingAll();
                      break;
                  case "editecourse":
                      System.out.println("press old id of teacher");
@@ -117,7 +119,7 @@ public class Main  {
                      System.out.println("press new  id of student");
                      intinput4=intscan.nextInt();
 
-                     courseService.edite(intinput,intinput2,intinput3,intinput4);
+                     courseService.Edite(intinput,intinput2,intinput3,intinput4);
 
                      break;
                  case "exit":
