@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherService {
-
+    /*delete teacher*/
     public void deleted(  int id)
     {
 
@@ -28,7 +28,7 @@ public class TeacherService {
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
-
+    /*edite teacher*/
     public void edite( Teacher  teacher )
     {
         try(Connection connection= ConnectionFactory.getconnection();
@@ -40,13 +40,14 @@ public class TeacherService {
             preparedStatement.setString(2,teacher.getFirstName());
             preparedStatement.setString(3,teacher.getLastName());
             preparedStatement.setInt(4,teacher.getId());
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
 
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
 
-
+    /*add teacher*/
     public void adding(Teacher teacher)
     {
         try(Connection connection= ConnectionFactory.getconnection();
@@ -57,7 +58,8 @@ public class TeacherService {
             preparedStatement.setInt(1,teacher.getId());
             preparedStatement.setString(2,teacher.getFirstName());
             preparedStatement.setString(3,teacher.getLastName());
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
 
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
@@ -86,6 +88,7 @@ public class TeacherService {
 
         return null;
     }
+    /*print teacher*/
 public void printing()
 
 {

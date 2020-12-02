@@ -13,6 +13,7 @@ import java.util.List;
 
 public class CourseService {
 
+    /*add in course*/
     public void adding(Course course)
     {
         try(
@@ -23,12 +24,13 @@ public class CourseService {
         {
             preparedStatement.setInt(1,course.getTeacherId());
             preparedStatement.setInt(2,course.getStudentId());
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
 
-
+    /*edite course*/
     public void edite(  int idteacher,int idstudent, int newidteacher,int newidstudent)
     {
         try(Connection connection= ConnectionFactory.getconnection();
@@ -41,7 +43,8 @@ public class CourseService {
             preparedStatement.setInt(2,newidstudent);
             preparedStatement.setInt(3,idteacher);
             preparedStatement.setInt(4,idstudent);
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
 
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 

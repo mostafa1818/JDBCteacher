@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentService {
-
+    /*add Student*/
     public void adding(Student student)
     {
         try(
@@ -26,12 +26,13 @@ public class StudentService {
             preparedStatement.setInt(1,student.getId());
             preparedStatement.setString(2,student.getFirstName());
             preparedStatement.setString(3,student.getLastName());
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
         }
         catch(SQLException sqlException){sqlException.printStackTrace();}
     }
 
-
+    /*delete Student*/
     public void deleted(  int id)
     {
 
@@ -50,6 +51,7 @@ public class StudentService {
     }
 
 
+    /*edite Student*/
 
     public void edite( Student   student )
     {
@@ -62,11 +64,13 @@ public class StudentService {
             preparedStatement.setString(2,student.getFirstName());
             preparedStatement.setString(3,student.getLastName());
             preparedStatement.setInt(4,student.getId());
-            preparedStatement.executeUpdate();
+            try{preparedStatement.executeUpdate();}catch(SQLException sqlException){ System.out.println("warning");}
+
 
         }catch (SQLException sqlException){sqlException.printStackTrace();}
 
     }
+
 
     public List<Student> loadall( )
     {
@@ -95,6 +99,7 @@ public class StudentService {
     }
 
 
+    /*print student*/
     public void printing()
 
     {
