@@ -40,7 +40,7 @@ public class InputDataForStudent {
             System.out.println("press lastname");
             String  input2 =scan.nextLine();
             student.setLastName(input2);
-              input2 =scan.nextLine();
+            input2 =scan.nextLine();
             System.out.println("ok");
             return student;
         }
