@@ -96,16 +96,17 @@ public void printing()
             ResultSet resultSet=preparedStatement.executeQuery()
     )
     {
-        List<Teacher> list = new ArrayList<>();
+
+        System.out.println("idteacher     FirstName     LastName");
+        System.out.println("-------------------------------------");
         while(resultSet.next())
         {
-            Teacher teacher=new Teacher();
-            teacher.setId(resultSet.getInt("idteacher"));
-            teacher.setFirstName(resultSet.getString("FirstName"));
-            teacher.setLastName(resultSet.getString("LastName"));
+            System.out.printf("%-15s%-15s%-15s",
+                    resultSet.getInt("idteacher"),
+                    resultSet.getString("FirstName"),
+                    resultSet.getString("LastName")
+           );
 
-            list.add(teacher);
-            System.out.println(teacher);
         }
 
 
