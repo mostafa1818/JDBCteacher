@@ -32,12 +32,12 @@ public class StudentService {
     }
 
 
-    public void deleted(List<Student > student, int id)
+    public void deleted(  int id)
     {
 
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
-                    prepareStatement("delete from student where idteacher= ?");
+                    prepareStatement("delete from student where idstudent= ?");
 
         )
 
@@ -51,17 +51,17 @@ public class StudentService {
 
 
 
-    public void edite(List<Student > student, int id, String firstname, String LastName)
+    public void edite( Student   student )
     {
         try(Connection connection= ConnectionFactory.getconnection();
             PreparedStatement preparedStatement=connection.
-                    prepareStatement("update  student set idteacher=?,FirstName=?,LastName=? where idteacher=?");
+                    prepareStatement("update  student set idstudent=?,FirstName=?,LastName=? where idstudent=?");
         )
         {
-            preparedStatement.setInt(1,id);
-            preparedStatement.setString(2,firstname);
-            preparedStatement.setString(3,LastName);
-            preparedStatement.setInt(4,id);
+            preparedStatement.setInt(1,student.getId());
+            preparedStatement.setString(2,student.getFirstName());
+            preparedStatement.setString(3,student.getLastName());
+            preparedStatement.setInt(4,student.getId());
             preparedStatement.executeUpdate();
 
         }catch (SQLException sqlException){sqlException.printStackTrace();}
@@ -115,7 +115,7 @@ public class StudentService {
                         resultSet.getString("FirstName"),
                         resultSet.getString("LastName")
                 );
-
+                System.out.println( );
 
 
             }
