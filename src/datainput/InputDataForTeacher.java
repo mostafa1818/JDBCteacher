@@ -6,27 +6,22 @@ import java.util.Scanner;
 
 public class InputDataForTeacher {
 
-
-
-
-
-
-
-
-
     public Teacher DataInputForEdite()
     {
         Teacher teacher=new Teacher();
+        Scanner scanner =new Scanner(System.in);
         Scanner scan =new Scanner(System.in);
         System.out.println("press id");
         int intinput=scan.nextInt();
         teacher.setId(intinput);
         System.out.println("press firstname");
-        String input=scan.nextLine();
+        String input=scan.next();
+
         teacher.setFirstName(input);
-        System.out.println("press last");
-        input=scan.nextLine();
-        teacher.setLastName(input);
+        System.out.println("press lasttname");
+        String  input2=scanner.nextLine();
+        teacher.setLastName(input2);
+        System.out.println("ok");
         return teacher;
     }
 
@@ -35,14 +30,15 @@ public class InputDataForTeacher {
     {
         Teacher teacher=new Teacher();
         Scanner scan =new Scanner(System.in);
-
+        Scanner scanner =new Scanner(System.in);
 
         System.out.println("press firstname");
-        String input=scan.nextLine();
+        String input=scan.next();
         teacher.setFirstName(input);
-        System.out.println("press last");
-          input=scan.nextLine();
-        teacher.setLastName(input);
+        System.out.println("press lasttname");
+        String  input2=scanner.nextLine();
+        teacher.setLastName(input2);
+        System.out.println("ok");
         return teacher;
     }
 }

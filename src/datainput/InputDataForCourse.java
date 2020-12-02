@@ -1,6 +1,7 @@
 package datainput;
 
 import objects.Course;
+import objects.Student;
 
 
 import java.util.Scanner;
@@ -16,12 +17,13 @@ public class InputDataForCourse {
             Scanner scan =new Scanner(System.in);
 
 
-            System.out.println("press firstname");
+            System.out.println("press idteacher");
             int input=scan.nextInt();
             course.setTeacherId(input);
-            System.out.println("press last");
-            input=input=scan.nextInt();
+            System.out.println("press idstudent");
+            input=scan.nextInt();
             course.setStudentId(input);
+            System.out.println("ok");
             return course;
         }
 
