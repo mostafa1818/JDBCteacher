@@ -28,8 +28,9 @@ public class Main  {
 //            System.out.println(teacher.toString());
 
          Scanner scan =new Scanner(System.in);
+        Scanner intscan =new Scanner(System.in);
          String input=scan.nextLine();
-
+       int  intinput;
          while(true)
          {
 
@@ -52,6 +53,7 @@ public class Main  {
              {break;}
              if(input.equals("showstudent"))
              {
+
                  studentService.printing();
 
 
@@ -65,7 +67,8 @@ public class Main  {
              {break;}
              if(input.equals("showscourse"))
              {
-                 courseService.printing();
+                 intinput=intscan.nextInt();
+                 courseService.printing(intinput);
              }
              if(input.equals("editecourse"))
              {break;}
