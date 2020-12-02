@@ -1,5 +1,8 @@
 package sample;
 
+import datainput.InputDataForCourse;
+import datainput.InputDataForStudent;
+import datainput.InputDataForTeacher;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +13,7 @@ import services.CourseService;
 import services.StudentService;
 import services.TeacherService;
 
+import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,9 +21,13 @@ public class Main  {
 
     public static void main(String[] args) {
         TeacherService teacherService= new TeacherService();
-       StudentService studentService=new StudentService();
+        StudentService studentService=new StudentService();
         CourseService courseService=new CourseService();
+        InputDataForTeacher inputDataForTeacher=new InputDataForTeacher();
+        InputDataForStudent inputDataForStudent=new InputDataForStudent();
+        InputDataForCourse inputDataForCourse=new InputDataForCourse();
 
+        System.out.println("press command");
 //        teacherService.deleted( teachers,1) ;
 
         //    teacherService.edite(teachers,3,"massod","deli");
@@ -34,48 +42,56 @@ public class Main  {
          while(true)
          {
 
-
-             if(input.equals("addteacher"))
-             {break;}
-             if(input.equals("deleteteacher"))
-             {break;}
-             if(input.equals("showteacher"))
+             switch (input)
              {
-                  teacherService.printing();
+                 case "addteacher":
+                     teacherService.adding(inputDataForTeacher.datainput());
+                     break;
+                 case "deleteteacher":
+
+                     break;
+                 case "showteacher":
+                     teacherService.printing();
+                     break;
+                 case "editeteacher":
+
+                     break;
+                 case "addstudent":
+                     studentService.adding(inputDataForStudent.datainput());
+
+                     break;
+                 case "deletestudent":
+
+                     break;
+                 case "showstudent":
+                     studentService.printing();
+                     break;
+                 case "editestudent":
+
+                     break;
+                 case "addcourse":
+                     courseService.adding(inputDataForCourse.datainput());
+
+                     break;
+                 case "deletecourse":
+
+                     break;
+                 case "showcourse":
+                     System.out.println("press id of teacher");
+                     intinput=intscan.nextInt();
+                     courseService.printing(intinput);
+                     break;
+                 case "editecourse":
+
+                     break;
+                 case "exit":
+
+                     break;
+                 default:
+                     input=scan.nextLine();
 
              }
-             if(input.equals("editeteacher"))
-             {break;}
 
-             if(input.equals("addstudent"))
-             {break;}
-             if(input.equals("deletestudent"))
-             {break;}
-             if(input.equals("showstudent"))
-             {
-
-                 studentService.printing();
-
-
-             }
-             if(input.equals("editestudent"))
-             {break;}
-
-             if(input.equals("addcourse"))
-             {break;}
-             if(input.equals("deletecourse"))
-             {break;}
-             if(input.equals("showscourse"))
-             {
-                 intinput=intscan.nextInt();
-                 courseService.printing(intinput);
-             }
-             if(input.equals("editecourse"))
-             {break;}
-
-             if(input.equals("exit"))
-             {break;}
-               input=scan.nextLine();
 
          }
 
