@@ -20,8 +20,5 @@ public class Course {
         this.studentId = studentId;
     }
 
-    @Override
-    public String toString() {
-        return "teacherId=" + teacherId + ", studentId=" + studentId ;
-    }
+
 }
