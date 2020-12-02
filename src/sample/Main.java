@@ -42,7 +42,9 @@ public class Main  {
         int  intinput2;
         int  intinput3;
         int  intinput4;
-        System.out.println("menu:\naddteacher\ndeleteteacher\n showteacher\nediteteacher");
+        System.out.println("menu:\naddteacher\ndeleteteacher\n showteacher\nediteteacher" +
+                "\naddstudent\ndeletestudent\nshowstudent\neditestudent" +
+                "\naddcourse\ndeletecourse\nshowcourse\neditecourse");
 
 
 
