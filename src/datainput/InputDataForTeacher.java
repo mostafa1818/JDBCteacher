@@ -21,7 +21,7 @@ public class InputDataForTeacher {
         System.out.println("press lasttname");
         String  input2=scanner.nextLine();
         teacher.setLastName(input2);
-        System.out.println("ok");
+
         return teacher;
     }
     /*input data for add*/
@@ -38,7 +38,7 @@ public class InputDataForTeacher {
         System.out.println("press lasttname");
         String  input2=scanner.nextLine();
         teacher.setLastName(input2);
-        System.out.println("ok");
+
         return teacher;
     }
 }
