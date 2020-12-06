@@ -6,8 +6,6 @@ public class Student {
     private String FirstName;
     private String LastName;
 
-
-
     public int getId() {
         return id;
     }
@@ -28,11 +26,7 @@ public class Student {
         LastName = lastName;
     }
 
-
-
     public void setFirstName(String firstName) {
         FirstName = firstName;
     }
-
-
 }

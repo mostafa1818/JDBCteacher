@@ -1,8 +1,9 @@
 package objects;
+
 /*Teacher class*/
 public class Teacher {
 
-    private  int id;
+    private int id;
     private String FirstName;
     private String LastName;
 
@@ -29,6 +30,5 @@ public class Teacher {
     public void setLastName(String lastName) {
         LastName = lastName;
     }
-
 
 }
